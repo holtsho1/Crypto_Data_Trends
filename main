@@ -1,0 +1,15 @@
+#import coinmarketscraper
+#import twitter user data project
+
+while true:
+    #when coinmarketscraper finds new coin send to twitter user data project to find database
+    #add get tweet data about sentiment?? or look up sentiment in database already created?
+
+    #based on sentiment and engagement send rating of crypto is a buy or sell
+
+    #create scraper for data about reddit sentiment similar to Twitter
+    #create coinmarketscraper API data scraper to find financial data about crypto
+        #look at 24H of newest 30 cryptos and see %gains vs %losses
+    #create tabtrader data scraper??
+        #overall crypto market trends (based on BTC, ethereum and other large market cryptos)
+    #watchlist coinmarketcap analyzer
