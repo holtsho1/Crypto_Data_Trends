@@ -20,15 +20,18 @@ while True:
 
     if SumGains>0:
         DayTrend="Positive"
+        InvOpp='Average'
     if SumGains>50:
         DayTrend="Very Positive"
+        InvOpp='Above Average'
     if SumGains>100:
         DayTrend="Hella Gains"
+        InvOpp='Opportune Time'
     print(SumGains)
     print(DayTrend)
     today=datetime.now()
     print(today)
-    Data=[SumGains,DayTrend,today]
+    Data=[SumGains,DayTrend,InvOpp,today]
     with open(r'24HGainsVsLossesDataStore', 'a') as f:
         writer = csv.writer(f)
         writer.writerow(Data)

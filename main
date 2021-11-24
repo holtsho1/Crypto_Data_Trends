@@ -10,6 +10,6 @@ while true:
     #create scraper for data about reddit sentiment similar to Twitter
     #create coinmarketscraper API data scraper to find financial data about crypto
         #look at 24H of newest 30 cryptos and see %gains vs %losses
-    #create tabtrader data scraper??
+    #create coinmarketcap scraper through api??
         #overall crypto market trends (based on BTC, ethereum and other large market cryptos)
     #watchlist coinmarketcap analyzer
