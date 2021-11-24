@@ -27,11 +27,12 @@ while True:
     if SumGains>100:
         DayTrend="Hella Gains"
         InvOpp='Opportune Time'
-    print(SumGains)
-    print(DayTrend)
+    #print(SumGains)
+    #print(DayTrend)
     today=datetime.now()
-    print(today)
+    #print(today)
     Data=[SumGains,DayTrend,InvOpp,today]
+    print(Data)
     with open(r'24HGainsVsLossesDataStore', 'a') as f:
         writer = csv.writer(f)
         writer.writerow(Data)
