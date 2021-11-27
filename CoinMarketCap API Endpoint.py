@@ -7,6 +7,7 @@ import json
 url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest'
 parameters = {
   'start':'1',
+  'name' : 'BTC',
   'limit':'1',
   'convert':'USD'
 }
