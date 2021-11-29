@@ -50,9 +50,10 @@ while True:
     #print(SumGains)
     #print(DayTrend)
     #print(today)
-    Data={'Total Gains':SumGains,'Binance Gains':BSCSumGains,'Trend':DayTrend,'Invest Rating':InvOpp,'Date':today}
+    #Data={'Total Gains':SumGains,'Binance Gains':BSCSumGains,'Trend':DayTrend,'Invest Rating':InvOpp,'Date':today}
+    Data=[SumGains,BSCSumGains,DayTrend,InvOpp,today]
     print(Data)
-    with open(r'24HGainsVsLossesDataStore', 'a') as f:
+    with open(r'24HGainsVsLossesDataStore.csv', 'a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(Data)
     f.close()
