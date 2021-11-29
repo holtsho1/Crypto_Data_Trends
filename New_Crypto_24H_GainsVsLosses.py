@@ -6,6 +6,7 @@ import csv
 while True:
     DayGains=0
     SumGains=0
+    BSCSumGains=0
     html = requests.get('https://coinmarketcap.com/new/')
     doc = lxml.html.fromstring(html.content)
     #add up total percent gains by all 30 new cryptos
@@ -16,12 +17,17 @@ while True:
         PosOrNeg=doc.xpath('//*[@id="__next"]/div/div/div[2]/div/div[2]/table/tbody/tr'+str([i])+'/td[6]/span/span/@class')
         #finds the type of parent chain (Binance, Ethereum, Tron, Avalanche) for this token
         ParentCoinType=doc.xpath('//*[@id="__next"]/div/div/div[2]/div/div[2]/table/tbody/tr'+str([i])+'/td[9]/div/text()')
-        if ParentCoinType=="Binance Coin":
-            if PosOrNeg[0]=='icon-Caret-up':
-                BSCSumGains=BSCSumGains+float(DayGains[0])
-            else:
-                BSCSumGains=BSCSumGains-float(DayGains[0])
-        print(PosOrNeg)
+        try:
+            #print(ParentCoinType[0])
+            if ParentCoinType[0]=="Binance Coin":
+                if PosOrNeg[0]=='icon-Caret-up':
+                    BSCSumGains=BSCSumGains+float(DayGains[0])
+                else:
+                    BSCSumGains=BSCSumGains-float(DayGains[0])
+        except IndexError:
+            pass
+        #print(PosOrNeg)
+        #print(BSCSumGains)
         if PosOrNeg[0]=='icon-Caret-up':
             SumGains=SumGains+float(DayGains[0])
         else:
