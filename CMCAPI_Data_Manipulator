@@ -1,0 +1,12 @@
+from CMCAPI_Data_Pull import *
+
+data_request=CMCAPI_DataExtract()
+time.sleep(30)
+new_data_request=CMCAPI_DataExtract()
+print(data_request)
+print(new_data_request)
+for crypto in new_data_request['data']:
+    for key,values in crypto.items():
+        if not crypto['name'] in data_request['data']['name']:
+            #trigger sniper bot
+            print('snipetime')

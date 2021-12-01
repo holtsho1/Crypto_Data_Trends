@@ -45,16 +45,35 @@ while True:
     else:
         DayTrend="Negative"
         InvOpp="Don't invest"
+
+    if BSCSumGains>0:
+        BSCDayTrend="Positive"
+        BSCInvOpp='Average'
+    if SumGains>50:
+        BSCDayTrend="Very Positive"
+        BSCInvOpp='Above Average'
+    if SumGains>100:
+        BSCDayTrend="Hella Gains"
+        BSCInvOpp='Opportune Time'
+    else:
+        BSCDayTrend="Negative"
+        BSCInvOpp="Don't invest"
     today=datetime.now()
     #below print statements used for startup / troubleshooting
     #print(SumGains)
     #print(DayTrend)
     #print(today)
     #Data={'Total Gains':SumGains,'Binance Gains':BSCSumGains,'Trend':DayTrend,'Invest Rating':InvOpp,'Date':today}
-    Data=[SumGains,BSCSumGains,DayTrend,InvOpp,today]
-    print(Data)
+    OverallData=[SumGains,DayTrend,InvOpp,today]
+    BSCData=[BSCSumGains,BSCDayTrend,BSCInvOpp,today]
+    print(OverallData)
     with open(r'24HGainsVsLossesDataStore.csv', 'a', newline='') as f:
         writer = csv.writer(f)
-        writer.writerow(Data)
+        writer.writerow(OverallData)
+
+    with open(r'24HGainsVsLossesDataStoreBSC.csv', 'a', newline='') as BSCf:
+        writer = csv.writer(BSCf)
+        writer.writerow(BSCData)
     f.close()
+    BSCf.close()
     time.sleep(300)
