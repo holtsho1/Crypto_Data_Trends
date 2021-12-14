@@ -1,0 +1,5 @@
+import os
+
+
+sniper_string="cd  & python sniper.py -t 0x3465fD2D9f900e34280aBab60E8d9987B5b5bb47 -a .05 -tsl 40"  #needs debugging??
+os.system('cmd /c '+sniper_string)

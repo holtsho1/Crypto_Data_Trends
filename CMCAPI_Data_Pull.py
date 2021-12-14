@@ -1,9 +1,5 @@
 from CoinMarketCap_API_Endpoint import *
 def CMCAPI_DataExtract():
-
-
-    today = str(date.today())+'T00:00:00.000Z'
-    print(today)
     session = Session()
     session.headers.update(headers)
     parameters = {

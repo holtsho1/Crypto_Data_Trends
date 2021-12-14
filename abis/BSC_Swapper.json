@@ -1,0 +1,608 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_BUSD",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_ROUTER",
+				"type": "address"
+			},
+			{
+				"internalType": "uint16",
+				"name": "_FEES",
+				"type": "uint16"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"inputs": [],
+		"name": "BUSD",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "DEV",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "FEEDOMINATOR",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "Liquidity",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "LiquidityAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "ROUTER",
+		"outputs": [
+			{
+				"internalType": "contract IDEXROUTER",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "TIGS",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "WBNB",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_token",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_spender",
+				"type": "address"
+			}
+		],
+		"name": "approveToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "autoLiquidityReceiver",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "Token",
+				"type": "address"
+			}
+		],
+		"name": "checkHoneypot",
+		"outputs": [
+			{
+				"internalType": "bool[]",
+				"name": "Honeypot",
+				"type": "bool[]"
+			},
+			{
+				"internalType": "uint256",
+				"name": "BuyExpectedOut",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "BuyRealOut",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "SellExpectedOut",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "SellRealOut",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "token",
+				"type": "address"
+			}
+		],
+		"name": "fetchTokenPrice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenPrice",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_outToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slippage",
+				"type": "uint256"
+			}
+		],
+		"name": "fromBNBtoToken",
+		"outputs": [],
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amountToSwap",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_outToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slippage",
+				"type": "uint256"
+			}
+		],
+		"name": "fromBUSDtoToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amountToSwap",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_inToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slippage",
+				"type": "uint256"
+			}
+		],
+		"name": "fromTokentoBNB",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amountToSwap",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_inToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slippage",
+				"type": "uint256"
+			}
+		],
+		"name": "fromTokentoBUSD",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amountToSwap",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_inToken",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_outToken",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "slippage",
+				"type": "uint256"
+			}
+		],
+		"name": "fromTokentoToken",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBNBPrice",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "BNBPrice",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_amountToSwap",
+				"type": "uint256"
+			}
+		],
+		"name": "getFee",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "path0",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "path1",
+				"type": "address"
+			}
+		],
+		"name": "getOutputAmount",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_Token",
+				"type": "address"
+			}
+		],
+		"name": "getOutputfromBNBtoToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_Token",
+				"type": "address"
+			}
+		],
+		"name": "getOutputfromBUSDtoToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_Token",
+				"type": "address"
+			}
+		],
+		"name": "getOutputfromTokentoBNB",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_Token",
+				"type": "address"
+			}
+		],
+		"name": "getOutputfromTokentoBUSD",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "amountIn",
+				"type": "uint256"
+			},
+			{
+				"internalType": "address",
+				"name": "_inToken",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_outToken",
+				"type": "address"
+			}
+		],
+		"name": "getOutputfromTokentoToken",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "amounts",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_DEV",
+				"type": "address"
+			}
+		],
+		"name": "setDEV",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "_FEES",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_FEEDOMINATOR",
+				"type": "uint256"
+			}
+		],
+		"name": "setFEES",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_autoLiquidityReceiver",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "_liquidity",
+				"type": "bool"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_LiquidityAmount",
+				"type": "uint256"
+			}
+		],
+		"name": "setLiquidy",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_ROUTER",
+				"type": "address"
+			}
+		],
+		"name": "setROUTER",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bool",
+				"name": "status",
+				"type": "bool"
+			}
+		],
+		"name": "setStatus",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "withdraw",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"stateMutability": "payable",
+		"type": "receive"
+	}
+]

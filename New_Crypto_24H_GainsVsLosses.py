@@ -3,12 +3,30 @@ from datetime import datetime
 import requests
 import lxml.html
 import csv
+from CoinMarketCap_API_Endpoint import *
 while True:
     DayGains=0
     SumGains=0
     BSCSumGains=0
-    html = requests.get('https://coinmarketcap.com/new/')
-    doc = lxml.html.fromstring(html.content)
+    try:
+        html = requests.get('https://coinmarketcap.com/new/')
+        doc = lxml.html.fromstring(html.content)
+    except ConnectionError:
+        print('Connection Error. Retrying in 5 seconds')
+        time.sleep(5)
+        continue
+    except socket.gaierror:
+        print('socket.gaierror. Retrying in 2 seconds')
+        time.sleep(2)
+        pass
+    except NewConnectionError:
+        print('NewConnectionError. Retrying in 2 seconds')
+        time.sleep(2)
+        pass
+    except MaxRetryError:
+        print('MaxRetryError. Attempting to reconnect in 10 seconds')
+        time.sleep(10)
+        continue
     #add up total percent gains by all 30 new cryptos
     for i in range(1,30):
         #finds the absolute value percent day gains for this coin
@@ -70,10 +88,10 @@ while True:
     with open(r'24HGainsVsLossesDataStore.csv', 'a', newline='') as f:
         writer = csv.writer(f)
         writer.writerow(OverallData)
-
+    f.close()
     with open(r'24HGainsVsLossesDataStoreBSC.csv', 'a', newline='') as BSCf:
         writer = csv.writer(BSCf)
         writer.writerow(BSCData)
-    f.close()
     BSCf.close()
+    BSCSumGains=0
     time.sleep(300)
